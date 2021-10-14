@@ -17,9 +17,9 @@ let player2 = {
   },
 };
 
-function createPlayer() {
-  const $player = document.createElement('div');
-  $player.classList.add('player');
+function createPlayer1() {
+  $player = document.createElement('div');
+  $player.classList.add('player1');
 
   const $progressbar = document.createElement('div');
   $progressbar.classList.add('progressbar');
@@ -27,11 +27,11 @@ function createPlayer() {
   const $character = document.createElement('div');
   $character.classList.add('character');
 
-  const $life = document.createElement('div');
+  $life = document.createElement('div');
   $life.classList.add('life');
-  $life.style.width = '100%';
+  $life.style.width = '50%';
 
-  const $name = document.createElement('div');
+  $name = document.createElement('div');
   $name.classList.add('name');
   $name.innerText = 'Scorpions';
 
@@ -48,5 +48,36 @@ function createPlayer() {
   $arenas.appendChild($player);
 }
 
-createPlayer('player1', 'Scorpions', 50);
-createPlayer('player2', 'Kitana', 80);
+createPlayer1('player1', 'Scorpions', 50);
+
+function createPlayer2() {
+  $player = document.createElement('div');
+  $player.classList.add('player2');
+
+  const $progressbar = document.createElement('div');
+  $progressbar.classList.add('progressbar');
+
+  const $character = document.createElement('div');
+  $character.classList.add('character');
+
+  $life = document.createElement('div');
+  $life.classList.add('life');
+  $life.style.width = '80%';
+
+  $name = document.createElement('div');
+  $name.classList.add('name');
+  $name.innerText = 'Kitana';
+
+  const $img = document.createElement('img');
+  $img.src = 'http://reactmarathon-api.herokuapp.com/assets/kitana.gif';
+
+  $player.appendChild($progressbar);
+  $player.appendChild($character);
+  $progressbar.appendChild($life);
+  $progressbar.appendChild($name);
+  $character.appendChild($img);
+
+  const $arenas = document.querySelector('.root');
+  $arenas.appendChild($player);
+}
+createPlayer2('player2', 'Kitana', 80);
