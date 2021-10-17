@@ -70,14 +70,16 @@ function changeHP(player) {
   console.log(player.hp);
   $playerLife.style.width = player.hp + '%';
 
-  if (player.hp == 0) {
-    $arenas.appendChild(playerLose(player.name));
+  if (player.hp == 0 && player.player == 1) {
+    $arenas.appendChild(playerLose(player2.name));
+  } else if (player.hp == 0 && player.player == 2){
+    $arenas.appendChild(playerLose(player1.name));
   }
 }
 
 function playerLose(name){
   const $loseTitle = createElement('div', 'loseTitle');
-  $loseTitle.innerText = name + ' lose';
+  $loseTitle.innerText = name + ' WIN';
 
   return $loseTitle;
 }
