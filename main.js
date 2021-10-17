@@ -53,7 +53,7 @@ function createPlayer(playerObj) {
 
 function uronHP(){
   let uron = Math.ceil(Math.random() * 100);
-  if (uron >= 20 && uron == 0)  {
+if (uron >= 20 || uron == 0)  {
     uronHP();
   } else {
     uron1 = uron;
@@ -63,6 +63,7 @@ return uron1;
 }
 function changeHP(player) {
   const $playerLife = document.querySelector('.player'+ player.player+ ' .life');
+  console.log(uronHP());
   player.hp = player.hp - uronHP();
   if (player.hp < 0) {
     player.hp = 0;
